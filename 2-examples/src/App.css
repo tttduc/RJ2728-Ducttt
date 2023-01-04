@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+ */
+.bigbox {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  margin-top: 100px;
+  align-items: center;
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
