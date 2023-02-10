@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "react-bootstrap": "^2.7.0",
+    "react-tabs": "^6.0.0"
+  },
+  "devDependencies": {
+    "react-router-dom": "^6.8.1"
+  }
+}

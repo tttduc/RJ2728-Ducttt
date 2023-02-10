@@ -2,19 +2,34 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import anh from "./picture/conuntry.webp";
-import Session02 from "./components/homework/session02/Session02";
+import Session02 from "./components/homework/session02/blockui2/Session02";
 import Ss03 from "./components/example/session03/session03";
 import Btnlike from "./components/homework/session03/Buttonlike/Btnlike";
 import Btnrate from "./components/homework/session03/Buttonlike/Btnrate";
+import Countdown from "./components/example/4-LifecycleComponent/Countdown";
+import CountClass from "./components/example/4-LifecycleComponent/Countdown/CountClass";
+import ChangeColor from "./components/example/ex/ChangeColor";
+import ListUser from "./components/example/ListUser/User/ListUser";
+import ExTabs from "./components/homework/session03/Ex4,5,6/ExTabs";
+import Accordions from "./components/homework/session03/Ex4,5,6/Accordions";
+import Detail from "./components/example/ListUser/Detail/Detail";
+import UserForm from "./components/example/ListUser/Form/UserForm";
 function App() {
   return (
-    <Btnrate/>
-      /* <Btnlike/> */
-    /* <Ss03/> */
-   /*  <Session02/> */
-    
-
-    /*Basic1 <div className="bigbox">
+    <>
+    <UserForm/>
+    {/* <Detail/> */}
+    {/* <Accordions/> */}
+    {/* <ExTabs/> */}
+    {/* <ListUser/> */}
+    {/* <ChangeColor/> */}
+       {/* <CountClass/> */}
+       {/* <Countdown/> */} 
+       {/* <Btnrate/>  */}
+       {/* <Btnlike/> */} 
+       {/*  <Ss03/>  */}
+        {/* <Session02/> */} 
+      {/* <div className="bigbox">
       <header>
         <h2>The pulpit rock</h2>
       </header>
@@ -40,7 +55,7 @@ function App() {
               className="carousel slide"
               data-bs-ride="carousel"
             >
-              <div className="carousel-inner">
+              <div className="carousel-inner">s
                 <div className="carousel-item active">
                   <img
                     src={anh}
@@ -65,8 +80,8 @@ function App() {
         </div>
       
     </div>
-    </div> */
-  
+    </div>  */}
+    </>
   );
 }
 
