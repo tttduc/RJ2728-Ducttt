@@ -40,12 +40,13 @@ const Login: React.FC<IProps> = (props) => {
     };
 
     return (
-        <form
+      <div className={styles.gradientborder}>
+        <form 
       onSubmit={handleSubmit}
-      className="w-50 mx-auto border border-success mt-5 mb-5"
+      className= {`{styles.formlayout},w-50 mx-auto border border-success mt-5 mb-5`}
     >
       <div className="mb-3 ms-5 me-5">
-        <label className="form-label ">Name</label>
+        <label className="form-label text-info">Name</label>
         <input
         className="form-control border-success"
           type="text"
@@ -55,7 +56,7 @@ const Login: React.FC<IProps> = (props) => {
         />
       </div>
       <div className="mb-3 ms-5 me-5">
-        <label className="form-label">Password</label>
+        <label className="form-label text-info">Password</label>
         <input
         className="form-control border-success"
           type="password"
@@ -67,6 +68,7 @@ const Login: React.FC<IProps> = (props) => {
 
       <button type="submit" className="btn btn-success ms-5 mb-5">Login</button>
     </form> 
+    </div>
     );
 };
 export default Login;
