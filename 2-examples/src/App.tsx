@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import anh from "./picture/conuntry.webp";
@@ -12,12 +12,23 @@ import ChangeColor from "./components/example/ex/ChangeColor";
 import ListUser from "./components/example/ListUser/User/ListUser";
 import ExTabs from "./components/homework/session03/Ex4,5,6/ExTabs";
 import Accordions from "./components/homework/session03/Ex4,5,6/Accordions";
-import Detail from "./components/example/ListUser/Detail/Detail";
 import UserForm from "./components/example/ListUser/Form/UserForm";
+import Login from "./components/homework/web/Auth/Login";
+import BaseWebRouter from "./components/homework/web/BaseWebRouter";
+import FormAgent from "./components/homework/web/Form/FormAgent";
 function App() {
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <>
-    <UserForm/>
+    {/* <FormAgent/> */}
+    <>
+      {isLogin ? (
+        <BaseWebRouter setIsLogin={setIsLogin} />
+      ) : ( 
+        <Login setIsLogin={setIsLogin} />
+      )}
+    </>
+    {/* <UserForm/> */}
     {/* <Detail/> */}
     {/* <Accordions/> */}
     {/* <ExTabs/> */}

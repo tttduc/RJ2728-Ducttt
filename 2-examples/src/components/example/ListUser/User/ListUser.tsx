@@ -1,52 +1,55 @@
-import { Console } from 'console';
-import React, { useEffect, useId, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-
-type Props = {};
-
-interface IUser {
+interface IHs {
     name: string;
     age: number;
     id: string | number;
+    city: string;
 }
 
-function ListUser(props: Props) {
-    const [listUser, setListUser] = useState<Array<IUser>>([]);
+const ListUser: React.FC = () => {
+    const navigate = useNavigate();
+    const [listHs, setListHs] = useState<Array<IHs>>([]);
 
     useEffect(() => {
-        getListUser();
+        getListXe();
     }, []);
-
-    const getListUser = () => {
-        const url = "https://63a06c2124d74f9fe837cb19.mockapi.io/api/v1/basic/";
+    const getListXe = () => {
+        const url = "https://63a06c2124d74f9fe837cb19.mockapi.io/api/v1/users";
         fetch(url, {
             method: "GET",
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log("Success", data);
-                setListUser(data);
+                console.log("Success:", data);
+                setListHs(data);
             })
             .catch((error) => {
-                console.log("Error", error);
+                console.error("Error:", error);
             });
-    }
+    };
     const handleDelete = (id: string | number) => {
-        const url = "https://63a06c2124d74f9fe837cb19.mockapi.io/api/v1/basic/"+ id;
+        const url = "https://63a06c2124d74f9fe837cb19.mockapi.io/api/v1/users" + id;
         fetch(url, {
             method: "DELETE",
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log("Success", data);
-                getListUser();
+                console.log(data);
+                getListXe();
             })
             .catch((error) => {
-                console.log("Error", error);
+                console.error("Error:", error);
             });
-    }
-    const handleDetail = () => {
-        console.log("Detail");
+    };
+    const handleUpdate = (id: string | number) => {
+        console.log("handleDetail", id);
+        navigate(`form/${id}`);
+    };
+    const handleDetail = (id: string | number) => {
+        console.log("Detail", id);
+        navigate(`detail/${id}`);
     };
     return (
         <table>
@@ -55,19 +58,21 @@ function ListUser(props: Props) {
                     <th scope="col">STT</th>
                     <th scope="col">Name</th>
                     <th scope="col">Age</th>
+                    <th scope="col">City</th>
                 </tr>
             </thead>
             <tbody>
-                {listUser.map((item, index) => (
+                {listHs.map((item, index) => (
                     <tr key={item.id}>
                         <td scope="row">{item.id}</td>
                         <td>{item.name}</td>
                         <td>{item.age}</td>
-                        <td>  
+                        <td>{item.city}</td>
+                        <td>
                             <button onClick={() => handleDelete(item.id)} className="btn btn-danger">Delete</button>
                         </td>
                         <td>
-                            <button onClick={() =>handleDetail}>Detail</button>
+                            <button onClick={() => handleDetail}>Detail</button>
                         </td>
                     </tr>
                 ))}

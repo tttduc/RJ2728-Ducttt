@@ -51,7 +51,10 @@ const UserForm: React.FC = () => {
         console.log(tempValue);
         setUserAge(parseInt(tempValue));
     };
-
+    const handleChangeUserCity = (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e.target.value);
+        setUserCity(e.target.value);
+    };
     const createUser = (name: string | undefined, age: number | undefined, city: string | undefined) => {
         console.log(name, age, city);
         const url = 'https://63a06c2124d74f9fe837cb19.mockapi.io/api/v1/usres'
